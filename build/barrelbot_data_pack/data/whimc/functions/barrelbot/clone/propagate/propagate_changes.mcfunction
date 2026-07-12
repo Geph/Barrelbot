@@ -1,7 +1,13 @@
+#> whimc:barrelbot/clone/propagate/propagate_changes
+#   Propagate any changes to the puzzle to all clones
+
 execute on passengers run data modify storage whimc:storage clone.success_function set from entity @s data.success_function
+
+#Get coordinates
 execute store result score $source_x whimc.dummy run data get entity @s Pos[0]
 execute store result score $source_y whimc.dummy run data get entity @s Pos[1]
 execute store result score $source_z whimc.dummy run data get entity @s Pos[2]
+
 execute on passengers run data modify storage whimc:storage bounding_box set from entity @s data.bounding_box
 execute store result score $max_x whimc.dummy run data get storage whimc:storage bounding_box.max_x
 execute store result score $max_y whimc.dummy run data get storage whimc:storage bounding_box.max_y
@@ -9,14 +15,23 @@ execute store result score $max_z whimc.dummy run data get storage whimc:storage
 execute store result score $min_x whimc.dummy run data get storage whimc:storage bounding_box.min_x
 execute store result score $min_y whimc.dummy run data get storage whimc:storage bounding_box.min_y
 execute store result score $min_z whimc.dummy run data get storage whimc:storage bounding_box.min_z
+
+#This is total spaghetti code
+#Accidentally used the same variable name for two slightly different circumstances and am now facing the consequences
 scoreboard players operation $base_max_x whimc.dummy = $max_x whimc.dummy
 scoreboard players operation $base_max_y whimc.dummy = $max_y whimc.dummy
 scoreboard players operation $base_max_z whimc.dummy = $max_z whimc.dummy
 scoreboard players operation $base_min_x whimc.dummy = $min_x whimc.dummy
 scoreboard players operation $base_min_y whimc.dummy = $min_y whimc.dummy
 scoreboard players operation $base_min_z whimc.dummy = $min_z whimc.dummy
+
 scoreboard players operation $temp whimc.barrelbot.puzzle_type_id = @s whimc.barrelbot.puzzle_type_id
-execute as @e[type=text_display, distance=0.1.., tag=whimc.barrelbot.puzzle_manager, predicate=whimc:barrelbot/match_puzzle_type_id] at @s run function whimc:barrelbot/clone/propagate/update_puzzle
+execute as @e[type=text_display,distance=0.1..,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_puzzle_type_id] run scoreboard players add $propagate_count whimc.dummy 1
+execute as @e[type=text_display,distance=0.1..,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_puzzle_type_id] at @s run function whimc:barrelbot/clone/propagate/update_puzzle
+
+
+#Get data from marker
+#data modify storage whimc:storage clone.marker set from entity @s
 function whimc:barrelbot/manager/get_dimensions
 scoreboard players operation $min_source_x whimc.dummy = $real_min_x whimc.dummy
 scoreboard players operation $min_source_y whimc.dummy = $real_min_y whimc.dummy
@@ -27,6 +42,11 @@ scoreboard players operation $max_source_z whimc.dummy = $real_max_z whimc.dummy
 scoreboard players operation $vol_x whimc.dummy = $size_x whimc.dummy
 scoreboard players operation $vol_y whimc.dummy = $size_y whimc.dummy
 scoreboard players operation $vol_z whimc.dummy = $size_z whimc.dummy
+
+
+
+#Propagate changes
 data modify storage whimc:macro Pos2 set from storage whimc:macro Pos
-execute positioned as @e[type=text_display, distance=0.1.., tag=whimc.barrelbot.puzzle_manager, predicate=whimc:barrelbot/match_puzzle_type_id] run function whimc:barrelbot/clone/propagate/clone_details
-execute as @e[type=text_display, distance=0.1.., tag=whimc.barrelbot.puzzle_manager, predicate=whimc:barrelbot/match_puzzle_type_id] on passengers run data modify entity @s data.success_function set from storage whimc:storage clone.success_function
+execute positioned as @e[type=text_display,distance=0.1..,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_puzzle_type_id] run function whimc:barrelbot/clone/propagate/clone_details
+execute as @e[type=text_display,distance=0.1..,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_puzzle_type_id] on passengers run data modify entity @s data.success_function set from storage whimc:storage clone.success_function
+

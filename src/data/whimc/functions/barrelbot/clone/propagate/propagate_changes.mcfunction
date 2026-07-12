@@ -26,6 +26,7 @@ scoreboard players operation $base_min_y whimc.dummy = $min_y whimc.dummy
 scoreboard players operation $base_min_z whimc.dummy = $min_z whimc.dummy
 
 scoreboard players operation $temp whimc.barrelbot.puzzle_type_id = @s whimc.barrelbot.puzzle_type_id
+execute as @e[type=text_display,distance=0.1..,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_puzzle_type_id] run scoreboard players add $propagate_count whimc.dummy 1
 execute as @e[type=text_display,distance=0.1..,tag=whimc.barrelbot.puzzle_manager,predicate=whimc:barrelbot/match_puzzle_type_id] at @s run function whimc:barrelbot/clone/propagate/update_puzzle
 
 

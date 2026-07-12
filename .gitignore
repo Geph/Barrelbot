@@ -1,0 +1,9 @@
+
+.venv/
+temp/
+vendor/
+.DS_Store
+
+# Accidental / tooling noise
+build/barrelbot_data_pack/data/minecraft/worldgen/
+*.pdn

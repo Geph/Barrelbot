@@ -303,6 +303,38 @@
     {
       "type": "single",
       "resource": "whimc:barrelbot/faces/instructor/top"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/get_linked_puzzle"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/infinite_loop"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/end_code_block"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/move_up"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/ui/instructions/fire"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/infinite_loop"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/move_up"
+    },
+    {
+      "type": "single",
+      "resource": "whimc:barrelbot/instructions/fire"
     }
   ]
 }

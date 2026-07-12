@@ -150,6 +150,12 @@
     },
     {
       "predicate": {
+        "custom_model_data": 130023
+      },
+      "model": "whimc:barrelbot/ui/instructions/move_up"
+    },
+    {
+      "predicate": {
         "custom_model_data": 130024
       },
       "model": "whimc:barrelbot/ui/lock_bot"
@@ -198,6 +204,12 @@
     },
     {
       "predicate": {
+        "custom_model_data": 130032
+      },
+      "model": "whimc:barrelbot/ui/instructions/fire"
+    },
+    {
+      "predicate": {
         "custom_model_data": 130033
       },
       "model": "whimc:barrelbot/ui/instructions/counter_loop"
@@ -213,6 +225,24 @@
         "custom_model_data": 130035
       },
       "model": "whimc:barrelbot/ui/instructions/if_not_block"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130036
+      },
+      "model": "whimc:barrelbot/ui/get_linked_puzzle"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130037
+      },
+      "model": "whimc:barrelbot/ui/instructions/infinite_loop"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 130038
+      },
+      "model": "whimc:barrelbot/ui/instructions/end_code_block"
     }
   ]
 }

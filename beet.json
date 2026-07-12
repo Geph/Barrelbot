@@ -1,13 +1,16 @@
 {
     "author": "Kobe Duda",
     "name": "barrelbot",
+    "minecraft": "1.20.4",
     "data_pack": {
-        "load": ["src"]
+        "load": ["src"],
+        "pack_format": 26
     },
     "resource_pack": {
-        "load": ["src"]
+        "load": ["src"],
+        "pack_format": 22
     },
-    "description": "WHIMC Barrelbot Pack",
+    "description": "WHIMC Barrelbot Pack (Minecraft 1.20.4)",
     "meta": {
         "bolt": {"entrypoint":"whimc:main"}
     },

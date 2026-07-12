@@ -73,7 +73,10 @@ propagate = utils.WandButton("propagate_changes", [0.3, 0.3])
 propagate.hover_text = "Propagate changes to cloned puzzles"
 propagate.command = "function whimc:barrelbot/dev/propagate_changes"
 
-
+# Get Linked Puzzle (instructor debug)
+get_linked_puzzle = utils.WandButton("get_linked_puzzle", [0.3, 0.3])
+get_linked_puzzle.hover_text = "Get Linked Puzzle"
+get_linked_puzzle.command = "function whimc:barrelbot/editor/edit_wand/edit_mode/pages/get_linked_puzzle"
 
 ## Function
 

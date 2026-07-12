@@ -1,0 +1,12 @@
+# Barrelbot build dependencies (Minecraft 1.20.4)
+#
+# Private KobeDuda packages (kmc / kmc.item / kmc.ui) are required for a full
+# `beet build` of Bolt UI pages. Until those are available locally, use:
+#   python3 scripts/sync_build.py
+# which copies src mcfunctions/assets into build/ and refreshes pack formats.
+
+beet>=0.80,<0.110
+bolt>=0.20
+bolt-expressions>=0.9
+Pillow>=10
+# kmc / kmc.item / kmc.ui  # install from private source when available

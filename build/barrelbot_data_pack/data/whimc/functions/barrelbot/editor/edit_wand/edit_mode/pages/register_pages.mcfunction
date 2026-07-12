@@ -5,6 +5,8 @@ function whimc:barrelbot/editor/edit_wand/edit_mode/pages/puzzle
 data modify storage whimc:const WandPages append from storage whimc:storage Page
 function whimc:barrelbot/editor/edit_wand/edit_mode/pages/function
 data modify storage whimc:const WandPages append from storage whimc:storage Page
+function whimc:barrelbot/editor/edit_wand/edit_mode/pages/instructor
+data modify storage whimc:const WandPages append from storage whimc:storage Page
 function whimc:barrelbot/editor/edit_wand/edit_mode/pages/general
 data modify storage whimc:const WandPages append from storage whimc:storage Page
 function whimc:barrelbot/editor/edit_wand/edit_mode/pages/instructions
