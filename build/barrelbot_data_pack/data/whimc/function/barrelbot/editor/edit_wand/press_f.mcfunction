@@ -1,3 +1,4 @@
+execute unless entity @s[tag=whimc.classroom_staff] run return 0
 summon item_display ~ 1000000 ~ {Tags: ["whimc.temp_display"]}
 item replace entity @e[type=item_display, tag=whimc.temp_display, limit=1] container.0 from entity @s weapon.offhand
 item replace entity @s weapon.offhand from entity @s weapon.mainhand

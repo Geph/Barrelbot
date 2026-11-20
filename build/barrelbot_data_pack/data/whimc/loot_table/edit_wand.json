@@ -6,9 +6,9 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:warped_fungus_on_a_stick",
-          "functions": [
+          "modifier": [
             {
-              "function": "minecraft:set_lore",
+              "type": "minecraft:set_lore",
               "lore": [
                 {
                   "text": "Right click to edit puzzle features",
@@ -24,7 +24,7 @@
               "mode": "replace_all"
             },
             {
-              "function": "minecraft:set_components",
+              "type": "minecraft:set_components",
               "components": {
                 "minecraft:custom_data": {
                   "whimc_puzzle_wand": true
@@ -33,7 +33,7 @@
               }
             },
             {
-              "function": "minecraft:set_name",
+              "type": "minecraft:set_name",
               "name": {
                 "text": "Puzzle Wand",
                 "color": "#FFD9B8",

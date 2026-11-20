@@ -10,4 +10,4 @@ execute store result storage whimc:storage stack_entry.start_step int 1 run scor
 data modify storage whimc:storage marker_data.stack append from storage whimc:storage stack_entry
 function whimc:barrelbot/bot/grab_slot
 function whimc:barrelbot/instructions/general/execute_instruction with storage whimc:storage current_step
-execute at @s as @e[type=item_display, tag=whimc.execution_display_cursor, predicate=whimc:barrelbot/match_bot_id, scores={whimc.barrelbot.display_layer=0}] run function whimc:barrelbot/display/update_cursor
+execute at @s as @e[distance=0..,type=item_display, tag=whimc.execution_display_cursor, predicate=whimc:barrelbot/match_bot_id, scores={whimc.barrelbot.display_layer=0}] run function whimc:barrelbot/display/update_cursor

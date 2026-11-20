@@ -3,36 +3,31 @@
     "requirement": {
       "trigger": "minecraft:placed_block",
       "conditions": {
-        "location": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "block": {
-                "tag": "whimc:custom_blocks"
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": "#whimc:custom_blocks"
+                }
               }
-            }
-          },
-          {
-            "condition": "minecraft:match_tool",
-            "predicate": {
-              "predicates": {
-                "minecraft:block_entity_data": {
-                  "items": [
-                    {
-                      "predicates": {
-                        "minecraft:custom_data": {
-                          "whimc": {
-                            "block": {}
-                          }
-                        }
-                      }
+            },
+            {
+              "type": "minecraft:match_tool",
+              "predicate": {
+                "predicates": {
+                  "minecraft:custom_data": {
+                    "whimc": {
+                      "custom_block": true
                     }
-                  ]
+                  }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     }
   },

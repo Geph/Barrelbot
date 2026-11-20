@@ -1,3 +1,4 @@
+tag @s add whimc.classroom_running
 scoreboard players operation @s whimc.barrelbot.puzzle_id = $temp whimc.barrelbot.puzzle_id
 scoreboard players operation $temp whimc.barrelbot.bot_id = @s whimc.barrelbot.bot_id
 execute on passengers run function whimc:barrelbot/bot/load_instructions

@@ -11,7 +11,7 @@ data modify storage whimc:storage DisplayArcs[-1].Pos1 set from storage whimc:st
 data modify storage whimc:storage DisplayArcs[-1].Pos2 set from storage whimc:storage marker_data.stack[-1].Pos
 scoreboard players add $arc_count whimc.dummy 1
 data modify storage whimc:storage marker_data.stack append from storage whimc:storage stack_entry
-execute as @e[type=item_display, tag=whimc.execution_display, predicate=whimc:barrelbot/match_bot_id] run function whimc:barrelbot/display/push_back
+execute as @e[distance=0..,type=item_display, tag=whimc.execution_display, predicate=whimc:barrelbot/match_bot_id] run function whimc:barrelbot/display/push_back
 function whimc:barrelbot/display/function/spawn_displays
 function whimc:barrelbot/bot/grab_slot
 function whimc:barrelbot/instructions/general/execute_instruction with storage whimc:storage current_step

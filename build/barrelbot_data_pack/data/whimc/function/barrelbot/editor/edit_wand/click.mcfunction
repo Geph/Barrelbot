@@ -1,3 +1,4 @@
+execute unless entity @s[tag=whimc.classroom_staff] run return 0
 scoreboard players add $global whimc.barrelbot.edit_instance_id 1
 scoreboard players operation $temp whimc.barrelbot.edit_instance_id = $global whimc.barrelbot.edit_instance_id
 scoreboard players set #raycast_length whimc.dummy 300

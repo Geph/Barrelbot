@@ -1,20 +1,23 @@
-[
-  {
-    "function": "minecraft:set_custom_data",
-    "tag": "{barrelbot:{instruction:\"function\"}}"
-  },
-  {
-    "function": "minecraft:copy_custom_data",
-    "source": {
-      "type": "minecraft:storage",
-      "source": "whimc:storage"
+{
+  "type": "minecraft:sequence",
+  "functions": [
+    {
+      "type": "minecraft:set_custom_data",
+      "tag": "{barrelbot:{instruction:\"function\"}}"
     },
-    "ops": [
-      {
-        "source": "item_modifier.id",
-        "target": "barrelbot.function_id",
-        "op": "replace"
-      }
-    ]
-  }
-]
+    {
+      "type": "minecraft:copy_custom_data",
+      "source": {
+        "type": "minecraft:storage",
+        "source": "whimc:storage"
+      },
+      "ops": [
+        {
+          "source": "item_modifier.id",
+          "target": "barrelbot.function_id",
+          "op": "replace"
+        }
+      ]
+    }
+  ]
+}

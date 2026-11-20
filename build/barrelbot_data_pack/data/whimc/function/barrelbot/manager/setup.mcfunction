@@ -12,4 +12,3 @@ summon marker ~ ~ ~ {Tags: ["whimc.barrelbot.puzzle_storage", "whimc.barrelbot.p
 ride @e[type=marker, limit=1, tag=whimc.barrelbot.puzzle_storage.init] mount @s
 execute as @e[type=marker, limit=1, tag=whimc.barrelbot.puzzle_storage.init] run function whimc:barrelbot/manager/setup_marker
 tag @e[tag=whimc.barrelbot.puzzle_storage.init] remove whimc.barrelbot.puzzle_storage.init
-function whimc:barrelbot/puzzle_instance/register

@@ -19,7 +19,7 @@ scoreboard players operation $source_x whimc.dummy = $temp_source_x whimc.dummy
 scoreboard players operation $source_y whimc.dummy = $temp_source_y whimc.dummy
 scoreboard players operation $source_z whimc.dummy = $temp_source_z whimc.dummy
 scoreboard players operation $temp whimc.barrelbot.puzzle_id = $new_id whimc.barrelbot.puzzle_id
-execute at @e[type=text_display, tag=whimc.barrelbot.puzzle_manager, predicate=whimc:barrelbot/match_id] run function whimc:barrelbot/clone/clone_entities
+execute at @e[distance=0..,type=text_display, tag=whimc.barrelbot.puzzle_manager, predicate=whimc:barrelbot/match_id] run function whimc:barrelbot/clone/clone_entities
 scoreboard players operation $source_x whimc.dummy = $old_source_x whimc.dummy
 scoreboard players operation $source_y whimc.dummy = $old_source_y whimc.dummy
 scoreboard players operation $source_z whimc.dummy = $old_source_z whimc.dummy

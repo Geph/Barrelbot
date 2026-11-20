@@ -7,4 +7,4 @@ scoreboard players add $y1 whimc.dummy 1650
 execute store result score $temp whimc.barrelbot.bot_id run data get storage whimc:storage Inventory[0].components."minecraft:custom_data".barrelbot.instructor_id
 execute unless score $temp whimc.barrelbot.bot_id matches 1.. run execute store result score $temp whimc.barrelbot.bot_id run data get storage whimc:storage Inventory[0].tag.barrelbot.instructor_id
 data modify storage kmc.item:api item_stack set from storage whimc:storage Inventory[0]
-execute as @e[type=item_display, tag=whimc.instructor, predicate=whimc:barrelbot/match_bot_id] at @s run function whimc:barrelbot/no_smuggle/return_item/nested_execute_1
+execute as @e[distance=0..,type=item_display, tag=whimc.instructor, predicate=whimc:barrelbot/match_bot_id] at @s run function whimc:barrelbot/no_smuggle/return_item/nested_execute_1

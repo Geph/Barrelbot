@@ -22,4 +22,4 @@ scoreboard players operation $size_z whimc.dummy -= $real_min_z whimc.dummy
 scoreboard players add $size_x whimc.dummy 1
 scoreboard players add $size_y whimc.dummy 1
 scoreboard players add $size_z whimc.dummy 1
-execute as @e[type=text_display, tag=whimc.editor_outline, predicate=whimc:barrelbot/match_id] run function whimc:barrelbot/editor/outline/adjust/position_adjust with storage whimc:macro Pos
+execute as @e[distance=0..,type=text_display, tag=whimc.editor_outline, predicate=whimc:barrelbot/match_id] run function whimc:barrelbot/editor/outline/adjust/position_adjust with storage whimc:macro Pos

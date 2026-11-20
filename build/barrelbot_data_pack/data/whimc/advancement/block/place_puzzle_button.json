@@ -3,30 +3,33 @@
     "requirement": {
       "trigger": "minecraft:placed_block",
       "conditions": {
-        "location": [
-          {
-            "condition": "minecraft:location_check",
-            "predicate": {
-              "block": {
-                "blocks": [
-                  "minecraft:stone_button"
-                ]
+        "location": {
+          "type": "minecraft:all_of",
+          "terms": [
+            {
+              "type": "minecraft:location_check",
+              "predicate": {
+                "block": {
+                  "blocks": [
+                    "minecraft:stone_button"
+                  ]
+                }
               }
-            }
-          },
-          {
-            "condition": "minecraft:match_tool",
-            "predicate": {
-              "predicates": {
-                "minecraft:custom_data": {
-                  "whimc": {
-                    "puzzle_button": true
+            },
+            {
+              "type": "minecraft:match_tool",
+              "predicate": {
+                "predicates": {
+                  "minecraft:custom_data": {
+                    "whimc": {
+                      "puzzle_button": true
+                    }
                   }
                 }
               }
             }
-          }
-        ]
+          ]
+        }
       }
     }
   },

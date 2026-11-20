@@ -4,9 +4,9 @@ execute unless data storage whimc:storage Item run data modify storage whimc:sto
 execute store result score @s whimc.barrelbot.in_puzzle_id run data get storage whimc:storage Item.components."minecraft:custom_data".barrelbot.puzzle_id
 execute unless score @s whimc.barrelbot.in_puzzle_id matches 1.. run execute store result score @s whimc.barrelbot.in_puzzle_id run data get storage whimc:storage Item.tag.barrelbot.puzzle_id
 scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbot.in_puzzle_id
-scoreboard players operation @s whimc.barrelbot.puzzle_type_id = @e[type=text_display, tag=whimc.barrelbot.puzzle_manager, limit=1, predicate=whimc:barrelbot/match_id] whimc.barrelbot.puzzle_type_id
+scoreboard players operation @s whimc.barrelbot.puzzle_type_id = @e[distance=0..,type=text_display, tag=whimc.barrelbot.puzzle_manager, limit=1, predicate=whimc:barrelbot/match_id] whimc.barrelbot.puzzle_type_id
 scoreboard players operation $temp whimc.barrelbot.puzzle_id = @s whimc.barrelbot.in_puzzle_id
-execute as @e[type=text_display, tag=whimc.barrelbot.puzzle_manager, limit=1, predicate=whimc:barrelbot/match_id] on passengers run data modify storage whimc:storage bounding_box set from entity @s data.bounding_box
+execute as @e[distance=0..,type=text_display, tag=whimc.barrelbot.puzzle_manager, limit=1, predicate=whimc:barrelbot/match_id] on passengers run data modify storage whimc:storage bounding_box set from entity @s data.bounding_box
 function whimc:barrelbot/no_smuggle/ensure_bounding_box
 execute store result score $min_x whimc.dummy run data get storage whimc:storage bounding_box.min_x
 execute store result score $min_y whimc.dummy run data get storage whimc:storage bounding_box.min_y

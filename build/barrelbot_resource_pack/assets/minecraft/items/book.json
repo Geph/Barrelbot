@@ -126,6 +126,13 @@
           "type": "minecraft:model",
           "model": "whimc:barrelbot/instructions/if_not_block"
         }
+      },
+      {
+        "threshold": 130019,
+        "model": {
+          "type": "minecraft:model",
+          "model": "whimc:barrelbot/instructions/infinite_loop"
+        }
       }
     ]
   }

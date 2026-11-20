@@ -1,2 +1,1 @@
-function whimc:barrelbot/dev/reset_all_puzzles
-execute as @e[type=text_display] at @s run function whimc:barrelbot/dev/refresh_all_ids/nested_execute_0
+tellraw @s {"text":"Open classroom preview","color":"aqua","click_event":{"action":"run_command","command":"/bb preview repair"}}

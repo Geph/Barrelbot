@@ -1,49 +1,18 @@
-# Releasing Barrelbot
+# Build and release Barrelbot for Paper 26.3
 
-Releases follow the existing GitHub pattern: `v13`, `v15`, etc., each with:
+Build the classroom JAR with Java 25 and Python 3.10 or later. Supply a Paper 26.3 server folder that has initialized its libraries. WorldGuard and either WorldEdit or FAWE must be available in its plugins directory, or pass a separate directory with the optional plugins argument.
 
-- `barrelbot_data_pack_v{N}.zip`
-- `barrelbot_resource_pack_v{N}.zip`
-
-The next release version is tracked in [`VERSION`](VERSION) (currently **15**).
-
-## Automated release (recommended)
-
-1. Update [`VERSION`](VERSION) to the release number.
-2. Add release notes in `release-notes/v{N}.md` (optional but recommended).
-3. Commit the migrated `build/` output and release files.
-4. Create and push the tag:
-
-```bash
-git tag v15
-git push origin v15
-```
-
-The [Release workflow](.github/workflows/release.yml) will:
-
-1. Run `scripts/migrate_build_1211.py`
-2. Package `build/barrelbot_data_pack/` and `build/barrelbot_resource_pack/`
-3. Publish a GitHub release with both zip assets
-
-## Manual packaging
-
-```bash
-python scripts/migrate_build_1211.py
+```sh
+python scripts/build_classroom.py /path/to/paper --plugins /path/to/plugins
 python scripts/package_release.py
 ```
 
-Zips are written to `dist/`.
+The three deliverables are in `dist/`. The datapack and resource pack ZIPs have `pack.mcmeta` at the archive root. Edit the migrated trees under `build/` for this release. The original Beet sources under `src/` predate the component migration.
 
-To publish manually after packaging:
+To run the Maryville integration exercise, use the supplied reset-day archive. The runner copies terrain and entities into a fresh temporary server, runs synthetic accounts and setup operations, then removes its test copy.
 
-```bash
-gh release create v15 dist/barrelbot_data_pack_v15.zip dist/barrelbot_resource_pack_v15.zip \
-  --title "Barrelbot v15" \
-  --notes-file release-notes/v15.md
+```sh
+python scripts/test_maryville.py /path/to/paper "/path/to/maryville backup/2026" --plugins /path/to/plugins
 ```
 
-## Manual workflow test
-
-Use **Actions → Release → Run workflow** to build zip assets without creating a tag. This is useful for verifying packaging before tagging.
-
-After a successful release, bump `VERSION` to the next number on `main` if you are preparing the following release.
+The release workflow uses pinned Paper, WorldGuard and FAWE dependencies. A manual workflow run packages the artifacts. A version tag publishes them with the corresponding file in `release-notes/`. See [CLASSROOM.md](CLASSROOM.md) for installation and use.
